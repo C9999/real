@@ -1,229 +1,633 @@
 {
-    "categorias": {
-        "relacionamentos": {
-            "nome": "Relacionamentos",
-            "perguntas": [
-                {
-                    "id": "rel-001",
-                    "pergunta": "O que faz você se sentir acolhido e valorizado em uma relação?"
-                },
-                {
-                    "id": "rel-002",
-                    "pergunta": "Como você percebe que está criando uma conexão emocional com alguém?"
-                },
-                {
-                    "id": "rel-003",
-                    "pergunta": "Que lugar os relacionamentos românticos, amizades e outros vínculos ocupam na sua vida?"
-                },
-                {
-                    "id": "rel-004",
-                    "pergunta": "O que significa, para você, construir uma relação saudável?"
-                },
-                {
-                    "id": "rel-005",
-                    "pergunta": "Como você costuma demonstrar carinho e como gosta de recebê-lo?"
-                },
-                {
-                    "id": "rel-006",
-                    "pergunta": "De que forma você gostaria que uma pessoa próxima estivesse presente nos momentos difíceis?"
-                },
-                {
-                    "id": "rel-007",
-                    "pergunta": "O que você aprendeu sobre relacionamentos que gostaria de levar para as suas conexões atuais?"
-                },
-                {
-                    "id": "rel-008",
-                    "pergunta": "Como você lida com mudanças na intensidade ou na forma de uma relação ao longo do tempo?"
-                },
-                {
-                    "id": "rel-009",
-                    "pergunta": "O que ajuda você a manter sua individualidade enquanto constrói intimidade com alguém?"
-                },
-                {
-                    "id": "rel-010",
-                    "pergunta": "Como seria, para você, uma rede de afeto em que diferentes vínculos pudessem coexistir com respeito?"
-                }
-            ]
+  "categorias": {
+    "relacionamentos": {
+      "nome": "Relacionamentos",
+      "perguntas": [
+        {
+          "id": "rel-001",
+          "pergunta": "O que faz você se sentir acolhido e valorizado em uma relação?"
         },
-        "expectativas": {
-            "nome": "Expectativas",
-            "perguntas": [
-                {
-                    "id": "exp-001",
-                    "pergunta": "O que você espera de uma relação neste momento da sua vida?"
-                },
-                {
-                    "id": "exp-002",
-                    "pergunta": "Quais expectativas você costuma criar no início de uma conexão e como conversa sobre elas?"
-                },
-                {
-                    "id": "exp-003",
-                    "pergunta": "Como você gostaria de equilibrar tempo a sós, amizades, trabalho e relacionamentos?"
-                },
-                {
-                    "id": "exp-004",
-                    "pergunta": "O que compromisso significa para você, independentemente do formato da relação?"
-                },
-                {
-                    "id": "exp-005",
-                    "pergunta": "Como você se sente em relação às etapas tradicionais dos relacionamentos, como morar junto ou casar?"
-                },
-                {
-                    "id": "exp-006",
-                    "pergunta": "O que você gostaria que as pessoas entendessem sobre suas necessidades afetivas?"
-                },
-                {
-                    "id": "exp-007",
-                    "pergunta": "Como você prefere agir quando percebe que suas expectativas e as de outra pessoa são diferentes?"
-                },
-                {
-                    "id": "exp-008",
-                    "pergunta": "Que tipo de presença e frequência de contato fazem você se sentir conectado a alguém?"
-                },
-                {
-                    "id": "exp-009",
-                    "pergunta": "Como você gostaria de conversar quando seus sentimentos ou desejos mudarem?"
-                },
-                {
-                    "id": "exp-010",
-                    "pergunta": "O que seria importante alinhar antes de aprofundar uma relação ou iniciar uma nova conexão?"
-                }
-            ]
+        {
+          "id": "rel-002",
+          "pergunta": "Como você percebe que está criando uma conexão emocional com alguém?"
         },
-        "acordos": {
-            "nome": "Acordos",
-            "perguntas": [
-                {
-                    "id": "aco-001",
-                    "pergunta": "Como você diferencia um acordo construído em conjunto de uma regra imposta?"
-                },
-                {
-                    "id": "aco-002",
-                    "pergunta": "Quais assuntos considera importante conversar antes de se envolver com outras pessoas?"
-                },
-                {
-                    "id": "aco-003",
-                    "pergunta": "Como vocês poderiam revisar um acordo quando as necessidades de alguém mudarem?"
-                },
-                {
-                    "id": "aco-004",
-                    "pergunta": "Que tipo de transparência sobre outras conexões faz sentido para você?"
-                },
-                {
-                    "id": "aco-005",
-                    "pergunta": "Como você gostaria de combinar cuidados com saúde sexual entre as pessoas envolvidas?"
-                },
-                {
-                    "id": "aco-006",
-                    "pergunta": "Que informações você gostaria de compartilhar — ou prefere não compartilhar — sobre outros encontros?"
-                },
-                {
-                    "id": "aco-007",
-                    "pergunta": "Como podemos garantir que todas as pessoas afetadas por um acordo tenham voz na conversa?"
-                },
-                {
-                    "id": "aco-008",
-                    "pergunta": "Como você gostaria de lidar com um acordo que deixou de funcionar para alguém?"
-                },
-                {
-                    "id": "aco-009",
-                    "pergunta": "Que combinados práticos ajudariam a organizar tempo, privacidade e compromissos entre diferentes vínculos?"
-                },
-                {
-                    "id": "aco-010",
-                    "pergunta": "Como você gostaria que uma pessoa avisasse que não conseguirá cumprir um acordo, ou que deseja renegociá-lo?"
-                }
-            ]
+        {
+          "id": "rel-003",
+          "pergunta": "Que lugar os relacionamentos românticos, amizades e outros vínculos ocupam na sua vida?"
         },
-        "limites": {
-            "nome": "Limites",
-            "perguntas": [
-                {
-                    "id": "lim-001",
-                    "pergunta": "Como você percebe que um limite pessoal seu precisa ser comunicado?"
-                },
-                {
-                    "id": "lim-002",
-                    "pergunta": "O que ajuda você a dizer “não” sem sentir que precisa justificar excessivamente sua decisão?"
-                },
-                {
-                    "id": "lim-003",
-                    "pergunta": "Como você prefere que alguém reaja quando você expressa desconforto ou muda de ideia?"
-                },
-                {
-                    "id": "lim-004",
-                    "pergunta": "Que aspectos da sua privacidade são importantes preservar em qualquer relação?"
-                },
-                {
-                    "id": "lim-005",
-                    "pergunta": "Como você diferencia um limite pessoal de uma tentativa de controlar as escolhas de outra pessoa?"
-                },
-                {
-                    "id": "lim-006",
-                    "pergunta": "O que você precisa para se sentir seguro ao falar de ciúmes, inseguranças ou vulnerabilidades?"
-                },
-                {
-                    "id": "lim-007",
-                    "pergunta": "Como gostaria de agir se perceber que um limite seu foi ultrapassado?"
-                },
-                {
-                    "id": "lim-008",
-                    "pergunta": "Que situações fazem você precisar de mais espaço ou tempo para si?"
-                },
-                {
-                    "id": "lim-009",
-                    "pergunta": "Como podemos respeitar limites diferentes sem tratar as necessidades de alguém como menos importantes?"
-                },
-                {
-                    "id": "lim-010",
-                    "pergunta": "O que ajuda você a reconhecer e respeitar o limite de outra pessoa, mesmo quando não o compreende totalmente?"
-                }
-            ]
+        {
+          "id": "rel-004",
+          "pergunta": "O que significa, para você, construir uma relação saudável?"
         },
-        "sexo": {
-            "nome": "Sexo",
-            "perguntas": [
-                {
-                    "id": "sex-001",
-                    "pergunta": "O que ajuda você a se sentir confortável e presente durante uma experiência íntima?"
-                },
-                {
-                    "id": "sex-002",
-                    "pergunta": "Como você prefere conversar sobre desejos, curiosidades e fantasias?"
-                },
-                {
-                    "id": "sex-003",
-                    "pergunta": "O que torna mais fácil para você comunicar consentimento, desconforto ou vontade de parar?"
-                },
-                {
-                    "id": "sex-004",
-                    "pergunta": "Como você gostaria de conversar sobre saúde sexual, prevenção e testagem com uma pessoa parceira?"
-                },
-                {
-                    "id": "sex-005",
-                    "pergunta": "O que significa, para você, respeitar o ritmo e o desejo de cada pessoa na intimidade?"
-                },
-                {
-                    "id": "sex-006",
-                    "pergunta": "Como você se sente ao falar sobre diferenças de desejo sexual entre pessoas parceiras?"
-                },
-                {
-                    "id": "sex-007",
-                    "pergunta": "Que formas de intimidade, além do sexo, fazem você se sentir próximo de alguém?"
-                },
-                {
-                    "id": "sex-008",
-                    "pergunta": "Como você gostaria que uma pessoa perguntasse sobre algo novo que deseja experimentar com você?"
-                },
-                {
-                    "id": "sex-009",
-                    "pergunta": "Que cuidados com privacidade e confidencialidade são importantes para você ao falar sobre experiências íntimas?"
-                },
-                {
-                    "id": "sex-010",
-                    "pergunta": "Como você gostaria de conversar depois de uma experiência íntima para compartilhar o que foi bom e o que poderia ser diferente?"
-                }
-            ]
+        {
+          "id": "rel-005",
+          "pergunta": "Como você costuma demonstrar carinho e como gosta de recebê-lo?"
+        },
+        {
+          "id": "rel-006",
+          "pergunta": "De que forma você gostaria que uma pessoa próxima estivesse presente nos momentos difíceis?"
+        },
+        {
+          "id": "rel-007",
+          "pergunta": "O que você aprendeu sobre relacionamentos que gostaria de levar para as suas conexões atuais?"
+        },
+        {
+          "id": "rel-008",
+          "pergunta": "Como você lida com mudanças na intensidade ou na forma de uma relação ao longo do tempo?"
+        },
+        {
+          "id": "rel-009",
+          "pergunta": "O que ajuda você a manter sua individualidade enquanto constrói intimidade com alguém?"
+        },
+        {
+          "id": "rel-010",
+          "pergunta": "Como seria, para você, uma rede de afeto em que diferentes vínculos pudessem coexistir com respeito?"
+        },
+        {
+          "id": "rel-011",
+          "pergunta": "Como você costuma reconhecer que está sentindo ciúmes, e o que esse sentimento pode estar tentando comunicar?"
+        },
+        {
+          "id": "rel-012",
+          "pergunta": "O que ajudaria você a diferenciar uma insegurança pessoal de um problema concreto na relação?"
+        },
+        {
+          "id": "rel-013",
+          "pergunta": "Como você se sente ao imaginar que uma pessoa parceira pode sentir alegria ao ver você feliz com outra conexão?"
+        },
+        {
+          "id": "rel-014",
+          "pergunta": "O que compersão significa para você, e você tem curiosidade de vivenciar esse sentimento?"
+        },
+        {
+          "id": "rel-015",
+          "pergunta": "Como você gostaria de se relacionar com os metamores — pessoas que também se relacionam com alguém com quem você se relaciona?"
+        },
+        {
+          "id": "rel-016",
+          "pergunta": "Você sente necessidade de conhecer seus metamores ou prefere que esses vínculos tenham mais distância? Por quê?"
+        },
+        {
+          "id": "rel-017",
+          "pergunta": "Como você percebe hierarquias entre relacionamentos, mesmo quando ninguém as declara explicitamente?"
+        },
+        {
+          "id": "rel-018",
+          "pergunta": "Que diferenças entre vínculos você considera naturais, e quais poderiam gerar sensação de desigualdade?"
+        },
+        {
+          "id": "rel-019",
+          "pergunta": "Como podemos preservar autonomia individual sem deixar de demonstrar cuidado e responsabilidade afetiva?"
+        },
+        {
+          "id": "rel-020",
+          "pergunta": "O que faria você sentir que existe espaço para todas as pessoas envolvidas, sem precisar competir por importância?"
+        },
+        {
+          "id": "rel-021",
+          "pergunta": "O que significaria para você construir um relacionamento a três, e quais seriam suas expectativas para essa relação?"
+        },
+        {
+          "id": "rel-022",
+          "pergunta": "Como você imagina que seria desenvolver um vínculo afetivo com duas pessoas que também se relacionam entre si?"
+        },
+        {
+          "id": "rel-023",
+          "pergunta": "Em um trisal, como podemos garantir que as três pessoas tenham espaço para expressar suas necessidades e participar das decisões?"
+        },
+        {
+          "id": "rel-024",
+          "pergunta": "Como você se sentiria em um relacionamento em V, no qual uma pessoa se relaciona com outras duas que não necessariamente têm envolvimento romântico ou sexual entre si?"
+        },
+        {
+          "id": "rel-025",
+          "pergunta": "Em uma relação em V, como você imagina que deveria funcionar a convivência entre os metamores?"
+        },
+        {
+          "id": "rel-026",
+          "pergunta": "Você acredita que todas as pessoas de um trisal precisam ter a mesma intensidade de sentimentos umas pelas outras? Por quê?"
+        },
+        {
+          "id": "rel-027",
+          "pergunta": "Como lidaríamos com a possibilidade de duas pessoas de um trisal desenvolverem uma conexão mais intensa do que a terceira?"
+        },
+        {
+          "id": "rel-028",
+          "pergunta": "Se estivéssemos em um trisal e duas pessoas precisassem conversar sobre um problema entre elas, como poderíamos cuidar para que a terceira não se sentisse excluída?"
+        },
+        {
+          "id": "rel-029",
+          "pergunta": "Como você se sentiria ao demonstrar carinho em público por mais de uma pessoa com quem se relaciona?"
+        },
+        {
+          "id": "rel-030",
+          "pergunta": "Você gostaria de poder apresentar diferentes parceiros como namorados, namoradas ou companheiros em ambientes sociais? O que influenciaria essa decisão?"
         }
+      ]
+    },
+    "expectativas": {
+      "nome": "Expectativas",
+      "perguntas": [
+        {
+          "id": "exp-001",
+          "pergunta": "O que você espera de uma relação neste momento da sua vida?"
+        },
+        {
+          "id": "exp-002",
+          "pergunta": "Quais expectativas você costuma criar no início de uma conexão e como conversa sobre elas?"
+        },
+        {
+          "id": "exp-003",
+          "pergunta": "Como você gostaria de equilibrar tempo a sós, amizades, trabalho e relacionamentos?"
+        },
+        {
+          "id": "exp-004",
+          "pergunta": "O que compromisso significa para você, independentemente do formato da relação?"
+        },
+        {
+          "id": "exp-005",
+          "pergunta": "Como você se sente em relação às etapas tradicionais dos relacionamentos, como morar junto ou casar?"
+        },
+        {
+          "id": "exp-006",
+          "pergunta": "O que você gostaria que as pessoas entendessem sobre suas necessidades afetivas?"
+        },
+        {
+          "id": "exp-007",
+          "pergunta": "Como você prefere agir quando percebe que suas expectativas e as de outra pessoa são diferentes?"
+        },
+        {
+          "id": "exp-008",
+          "pergunta": "Que tipo de presença e frequência de contato fazem você se sentir conectado a alguém?"
+        },
+        {
+          "id": "exp-009",
+          "pergunta": "Como você gostaria de conversar quando seus sentimentos ou desejos mudarem?"
+        },
+        {
+          "id": "exp-010",
+          "pergunta": "O que seria importante alinhar antes de aprofundar uma relação ou iniciar uma nova conexão?"
+        },
+        {
+          "id": "exp-011",
+          "pergunta": "O que você imagina que seria mais desafiador ao começar a se relacionar com mais de uma pessoa?"
+        },
+        {
+          "id": "exp-012",
+          "pergunta": "Que expectativas você teria sobre o lugar que ocupa na vida de uma pessoa que tem outros vínculos?"
+        },
+        {
+          "id": "exp-013",
+          "pergunta": "Como você se sentiria se uma nova conexão se tornasse importante mais rapidamente do que você esperava?"
+        },
+        {
+          "id": "exp-014",
+          "pergunta": "Que tipo de apoio gostaria de receber quando surgissem ciúmes ou inseguranças?"
+        },
+        {
+          "id": "exp-015",
+          "pergunta": "Como você gostaria que a compersão pudesse fazer parte das suas experiências, sem se tornar uma obrigação?"
+        },
+        {
+          "id": "exp-016",
+          "pergunta": "Quanto tempo e disponibilidade você espera conseguir dedicar aos diferentes vínculos da sua vida?"
+        },
+        {
+          "id": "exp-017",
+          "pergunta": "Como você imagina que suas necessidades poderiam mudar conforme novas conexões se desenvolvessem?"
+        },
+        {
+          "id": "exp-018",
+          "pergunta": "O que significaria, para você, ter autonomia para construir vínculos sem precisar pedir autorização sobre os próprios sentimentos?"
+        },
+        {
+          "id": "exp-019",
+          "pergunta": "Como você gostaria de lidar com diferenças de prioridade ou de compromisso entre relações distintas?"
+        },
+        {
+          "id": "exp-020",
+          "pergunta": "Que expectativas você teria sobre a convivência, a proximidade ou a distância entre metamores?"
+        },
+        {
+          "id": "exp-021",
+          "pergunta": "Como você se sentiria se eu beijasse outras pessoas em uma festa ou no Carnaval? O que gostaria de conversar antes?"
+        },
+        {
+          "id": "exp-022",
+          "pergunta": "Para você, existe diferença entre beijar alguém por diversão em uma festa e beijar alguém por quem está desenvolvendo interesse afetivo?"
+        },
+        {
+          "id": "exp-023",
+          "pergunta": "Como você imagina que se sentiria ao me ver beijando outra pessoa na sua frente?"
+        },
+        {
+          "id": "exp-024",
+          "pergunta": "Você gostaria de viver experiências em festas e no Carnaval individualmente, juntos ou das duas formas? O que tornaria essas experiências agradáveis para você?"
+        },
+        {
+          "id": "exp-025",
+          "pergunta": "Como você se sentiria se uma experiência que inicialmente parecia casual resultasse no desejo de reencontrar aquela pessoa?"
+        },
+        {
+          "id": "exp-026",
+          "pergunta": "Se uma experiência com outra pessoa despertasse sentimentos inesperados, como você gostaria que conversássemos sobre isso?"
+        },
+        {
+          "id": "exp-027",
+          "pergunta": "Você se sentiria confortável se uma conexão inicialmente sexual se transformasse em um relacionamento afetivo? O que precisaria considerar?"
+        },
+        {
+          "id": "exp-028",
+          "pergunta": "Como você imagina que dividiríamos nosso tempo caso começássemos a desenvolver vínculos com outras pessoas?"
+        }
+      ]
+    },
+    "acordos": {
+      "nome": "Acordos",
+      "perguntas": [
+        {
+          "id": "aco-001",
+          "pergunta": "Como você diferencia um acordo construído em conjunto de uma regra imposta?"
+        },
+        {
+          "id": "aco-002",
+          "pergunta": "Quais assuntos considera importante conversar antes de se envolver com outras pessoas?"
+        },
+        {
+          "id": "aco-003",
+          "pergunta": "Como vocês poderiam revisar um acordo quando as necessidades de alguém mudarem?"
+        },
+        {
+          "id": "aco-004",
+          "pergunta": "Que tipo de transparência sobre outras conexões faz sentido para você?"
+        },
+        {
+          "id": "aco-005",
+          "pergunta": "Como você gostaria de combinar cuidados com saúde sexual entre as pessoas envolvidas?"
+        },
+        {
+          "id": "aco-006",
+          "pergunta": "Que informações você gostaria de compartilhar — ou prefere não compartilhar — sobre outros encontros?"
+        },
+        {
+          "id": "aco-007",
+          "pergunta": "Como podemos garantir que todas as pessoas afetadas por um acordo tenham voz na conversa?"
+        },
+        {
+          "id": "aco-008",
+          "pergunta": "Como você gostaria de lidar com um acordo que deixou de funcionar para alguém?"
+        },
+        {
+          "id": "aco-009",
+          "pergunta": "Que combinados práticos ajudariam a organizar tempo, privacidade e compromissos entre diferentes vínculos?"
+        },
+        {
+          "id": "aco-010",
+          "pergunta": "Como você gostaria que uma pessoa avisasse que não conseguirá cumprir um acordo, ou que deseja renegociá-lo?"
+        },
+        {
+          "id": "aco-011",
+          "pergunta": "Que informações sobre novas conexões você gostaria de compartilhar espontaneamente, e quais prefere conversar apenas quando forem relevantes?"
+        },
+        {
+          "id": "aco-012",
+          "pergunta": "Como podemos revisar acordos sem tratar uma mudança de necessidade como quebra de confiança automática?"
+        },
+        {
+          "id": "aco-013",
+          "pergunta": "Que processo seria justo se um acordo afetasse diretamente uma pessoa que não participou da conversa inicial?"
+        },
+        {
+          "id": "aco-014",
+          "pergunta": "Como distinguir um acordo de cuidado mútuo de uma regra que limita a autonomia de outra pessoa?"
+        },
+        {
+          "id": "aco-015",
+          "pergunta": "Que combinados ajudariam a lidar com o tempo de qualidade quando há vários vínculos e agendas diferentes?"
+        },
+        {
+          "id": "aco-016",
+          "pergunta": "Como podemos conversar quando uma pessoa deseja aprofundar uma nova conexão e outra sente receio?"
+        },
+        {
+          "id": "aco-017",
+          "pergunta": "Que transparência você espera sobre mudanças importantes em outras relações, preservando a privacidade de terceiros?"
+        },
+        {
+          "id": "aco-018",
+          "pergunta": "Como agiríamos se um acordo antigo deixasse de fazer sentido para uma das pessoas envolvidas?"
+        },
+        {
+          "id": "aco-019",
+          "pergunta": "Como evitar que uma pessoa seja colocada na posição de decidir ou autorizar os sentimentos de outra?"
+        },
+        {
+          "id": "aco-020",
+          "pergunta": "Como podemos reconhecer e reparar impactos emocionais quando uma decisão legítima ainda assim machuca alguém?"
+        },
+        {
+          "id": "aco-021",
+          "pergunta": "Que combinados você considera importantes para que possamos beijar outras pessoas em festas sem gerar mal-entendidos entre nós?"
+        },
+        {
+          "id": "aco-022",
+          "pergunta": "Você gostaria que avisássemos antes de ficar com alguém em uma festa ou prefere conversar sobre as experiências depois? Por quê?"
+        },
+        {
+          "id": "aco-023",
+          "pergunta": "Como poderíamos agir se, durante uma festa, uma pessoa quisesse continuar explorando novas conexões enquanto a outra preferisse ir embora?"
+        },
+        {
+          "id": "aco-024",
+          "pergunta": "Se construíssemos um trisal, como tomaríamos decisões que afetassem as três pessoas, garantindo que todas pudessem participar?"
+        },
+        {
+          "id": "aco-025",
+          "pergunta": "Em um trisal, quais assuntos você considera importantes para serem decididos pelas três pessoas e quais poderiam ser tratados individualmente por cada dupla?"
+        },
+        {
+          "id": "aco-026",
+          "pergunta": "Em uma relação em V, como poderíamos organizar os encontros e os compromissos sem pressupor que todas as pessoas precisam receber exatamente o mesmo tempo ou tratamento?"
+        },
+        {
+          "id": "aco-027",
+          "pergunta": "Como deveríamos proceder se uma das pessoas de um trisal quisesse mudar o formato do relacionamento ou deixasse de desejar aquela configuração?"
+        },
+        {
+          "id": "aco-028",
+          "pergunta": "Quais combinados você considera importantes antes de uma experiência sexual envolvendo três ou mais pessoas?"
+        },
+        {
+          "id": "aco-029",
+          "pergunta": "Como podemos garantir que todas as pessoas envolvidas saibam quais são os acordos de consentimento, prevenção e privacidade antes de uma experiência sexual coletiva?"
+        },
+        {
+          "id": "aco-030",
+          "pergunta": "Se alguém mudasse de ideia durante uma experiência sexual com várias pessoas, como poderíamos garantir que essa decisão fosse respeitada sem pressão?"
+        },
+        {
+          "id": "aco-031",
+          "pergunta": "Como você gostaria de conversar sobre o que pode ou não ser compartilhado com outras pessoas depois de um encontro sexual coletivo?"
+        },
+        {
+          "id": "aco-032",
+          "pergunta": "Como podemos combinar cuidados com saúde sexual quando existem diferentes parceiros e práticas sexuais?"
+        }
+      ]
+    },
+    "limites": {
+      "nome": "Limites",
+      "perguntas": [
+        {
+          "id": "lim-001",
+          "pergunta": "Como você percebe que um limite pessoal seu precisa ser comunicado?"
+        },
+        {
+          "id": "lim-002",
+          "pergunta": "O que ajuda você a dizer “não” sem sentir que precisa justificar excessivamente sua decisão?"
+        },
+        {
+          "id": "lim-003",
+          "pergunta": "Como você prefere que alguém reaja quando você expressa desconforto ou muda de ideia?"
+        },
+        {
+          "id": "lim-004",
+          "pergunta": "Que aspectos da sua privacidade são importantes preservar em qualquer relação?"
+        },
+        {
+          "id": "lim-005",
+          "pergunta": "Como você diferencia um limite pessoal de uma tentativa de controlar as escolhas de outra pessoa?"
+        },
+        {
+          "id": "lim-006",
+          "pergunta": "O que você precisa para se sentir seguro ao falar de ciúmes, inseguranças ou vulnerabilidades?"
+        },
+        {
+          "id": "lim-007",
+          "pergunta": "Como gostaria de agir se perceber que um limite seu foi ultrapassado?"
+        },
+        {
+          "id": "lim-008",
+          "pergunta": "Que situações fazem você precisar de mais espaço ou tempo para si?"
+        },
+        {
+          "id": "lim-009",
+          "pergunta": "Como podemos respeitar limites diferentes sem tratar as necessidades de alguém como menos importantes?"
+        },
+        {
+          "id": "lim-010",
+          "pergunta": "O que ajuda você a reconhecer e respeitar o limite de outra pessoa, mesmo quando não o compreende totalmente?"
+        },
+        {
+          "id": "lim-011",
+          "pergunta": "O que costuma intensificar seus ciúmes, e quais situações você gostaria de conversar com mais cuidado?"
+        },
+        {
+          "id": "lim-012",
+          "pergunta": "Como você gostaria que uma pessoa parceira acolhesse sua insegurança sem assumir a responsabilidade de eliminá-la por completo?"
+        },
+        {
+          "id": "lim-013",
+          "pergunta": "Que informações sobre metamores você prefere não receber, para preservar sua privacidade emocional?"
+        },
+        {
+          "id": "lim-014",
+          "pergunta": "Quais limites você considera importantes para proteger a intimidade e a confidencialidade de cada vínculo?"
+        },
+        {
+          "id": "lim-015",
+          "pergunta": "Como você se sentiria se duas pessoas parceiras suas criassem uma amizade próxima sem envolvimento romântico ou sexual?"
+        },
+        {
+          "id": "lim-016",
+          "pergunta": "Há alguma forma de hierarquia relacional que seria desconfortável para você? Como identificá-la e conversar sobre isso?"
+        },
+        {
+          "id": "lim-017",
+          "pergunta": "Como dizer que precisa de tempo, espaço ou reafirmação sem transformar isso em uma exigência de controle?"
+        },
+        {
+          "id": "lim-018",
+          "pergunta": "Como você gostaria de agir se percebesse que está se comparando com um metamour?"
+        },
+        {
+          "id": "lim-019",
+          "pergunta": "Que aspectos da sua autonomia você considera indispensáveis, mesmo quando existe desconforto ou discordância?"
+        },
+        {
+          "id": "lim-020",
+          "pergunta": "Como podemos respeitar a privacidade de uma pessoa parceira sem esconder informações que afetam acordos compartilhados?"
+        },
+        {
+          "id": "lim-021",
+          "pergunta": "Como você se sentiria se eu demonstrasse carinho por outra pessoa na sua frente, como abraçar, dar as mãos ou beijar?"
+        },
+        {
+          "id": "lim-022",
+          "pergunta": "Existe alguma demonstração de afeto em público que deixaria você desconfortável? Como gostaria de conversar sobre isso?"
+        },
+        {
+          "id": "lim-023",
+          "pergunta": "Você se sentiria confortável em contar à sua família que vive ou deseja viver relacionamentos não monogâmicos? O que influenciaria sua decisão?"
+        },
+        {
+          "id": "lim-024",
+          "pergunta": "Como gostaria que eu agisse se alguém da sua família fizesse perguntas invasivas ou comentários negativos sobre nossos relacionamentos?"
+        },
+        {
+          "id": "lim-025",
+          "pergunta": "Você gostaria que nossos outros parceiros pudessem participar de reuniões familiares, aniversários e celebrações? Quais fatores influenciariam essa escolha?"
+        },
+        {
+          "id": "lim-026",
+          "pergunta": "Como poderíamos lidar com situações em que uma pessoa se sente confortável em tornar sua não monogamia pública, enquanto outra prefere manter essa informação privada?"
+        },
+        {
+          "id": "lim-027",
+          "pergunta": "O que você considera importante preservar em termos de privacidade ao publicar fotos, marcar pessoas nas redes sociais ou compartilhar informações sobre nossos relacionamentos?"
+        },
+        {
+          "id": "lim-028",
+          "pergunta": "Como você gostaria que eu reagisse se você sentisse ciúmes ao me ver demonstrando carinho por outra pessoa?"
+        },
+        {
+          "id": "lim-029",
+          "pergunta": "Como podemos conversar sobre uma experiência que despertou insegurança sem transformar essa insegurança em uma obrigação de restringir a liberdade de alguém?"
+        }
+      ]
+    },
+    "sexo": {
+      "nome": "Sexo",
+      "perguntas": [
+        {
+          "id": "sex-001",
+          "pergunta": "O que ajuda você a se sentir confortável e presente durante uma experiência íntima?"
+        },
+        {
+          "id": "sex-002",
+          "pergunta": "Como você prefere conversar sobre desejos, curiosidades e fantasias?"
+        },
+        {
+          "id": "sex-003",
+          "pergunta": "O que torna mais fácil para você comunicar consentimento, desconforto ou vontade de parar?"
+        },
+        {
+          "id": "sex-004",
+          "pergunta": "Como você gostaria de conversar sobre saúde sexual, prevenção e testagem com uma pessoa parceira?"
+        },
+        {
+          "id": "sex-005",
+          "pergunta": "O que significa, para você, respeitar o ritmo e o desejo de cada pessoa na intimidade?"
+        },
+        {
+          "id": "sex-006",
+          "pergunta": "Como você se sente ao falar sobre diferenças de desejo sexual entre pessoas parceiras?"
+        },
+        {
+          "id": "sex-007",
+          "pergunta": "Que formas de intimidade, além do sexo, fazem você se sentir próximo de alguém?"
+        },
+        {
+          "id": "sex-008",
+          "pergunta": "Como você gostaria que uma pessoa perguntasse sobre algo novo que deseja experimentar com você?"
+        },
+        {
+          "id": "sex-009",
+          "pergunta": "Que cuidados com privacidade e confidencialidade são importantes para você ao falar sobre experiências íntimas?"
+        },
+        {
+          "id": "sex-010",
+          "pergunta": "Como você gostaria de conversar depois de uma experiência íntima para compartilhar o que foi bom e o que poderia ser diferente?"
+        },
+        {
+          "id": "sex-011",
+          "pergunta": "Como você gostaria de conversar sobre desejo sexual quando os níveis de interesse variam entre diferentes parceiros?"
+        },
+        {
+          "id": "sex-012",
+          "pergunta": "Que cuidados de consentimento você considera essenciais quando há mais de duas pessoas envolvidas?"
+        },
+        {
+          "id": "sex-013",
+          "pergunta": "Como você prefere combinar prevenção e testagem de ISTs quando as práticas ou parcerias mudam?"
+        },
+        {
+          "id": "sex-014",
+          "pergunta": "Que informações de saúde sexual você considera necessárias compartilhar antes de uma nova prática ou parceria?"
+        },
+        {
+          "id": "sex-015",
+          "pergunta": "Como conversar sobre uma experiência sexual que despertou sentimentos inesperados?"
+        },
+        {
+          "id": "sex-016",
+          "pergunta": "Que limites de privacidade gostaria de estabelecer ao compartilhar detalhes de experiências íntimas com outras pessoas?"
+        },
+        {
+          "id": "sex-017",
+          "pergunta": "Como você gostaria de reagir se uma pessoa parceira não quisesse participar de uma experiência que você deseja explorar?"
+        },
+        {
+          "id": "sex-018",
+          "pergunta": "O que ajudaria você a comunicar uma mudança de ideia durante uma experiência íntima sem sentir pressão para continuar?"
+        },
+        {
+          "id": "sex-019",
+          "pergunta": "Como podemos evitar que uma experiência sexual em grupo seja tratada como obrigação ou prova de abertura?"
+        },
+        {
+          "id": "sex-020",
+          "pergunta": "Como você gostaria de conversar sobre prevenção e cuidados sem julgamento ou constrangimento?"
+        },
+        {
+          "id": "sex-021",
+          "pergunta": "O que você pensa sobre a possibilidade de viver uma experiência sexual a três? O que tornaria essa experiência interessante ou desconfortável para você?"
+        },
+        {
+          "id": "sex-022",
+          "pergunta": "Você teria mais interesse em um ménage com uma pessoa conhecida, com alguém novo ou em uma situação espontânea? O que influenciaria sua escolha?"
+        },
+        {
+          "id": "sex-023",
+          "pergunta": "Como você gostaria de conversar sobre desejos e expectativas antes de uma experiência sexual com três ou mais pessoas?"
+        },
+        {
+          "id": "sex-024",
+          "pergunta": "Como você se sentiria se, durante um ménage, percebesse que duas pessoas estavam interagindo mais entre si do que com você?"
+        },
+        {
+          "id": "sex-025",
+          "pergunta": "Como podemos garantir que ninguém se sinta obrigado a participar de uma prática sexual apenas para agradar aos demais?"
+        },
+        {
+          "id": "sex-026",
+          "pergunta": "Você gostaria de explorar experiências sexuais com várias pessoas em conjunto com um parceiro ou também individualmente? Como imagina que conversaria sobre isso?"
+        },
+        {
+          "id": "sex-027",
+          "pergunta": "Com que frequência você considera importante realizar exames de infecções sexualmente transmissíveis (ISTs), considerando suas práticas e parcerias sexuais?"
+        },
+        {
+          "id": "sex-028",
+          "pergunta": "Como você se sentiria ao conversar com uma nova pessoa sobre exames recentes de ISTs antes de terem relações sexuais?"
+        },
+        {
+          "id": "sex-029",
+          "pergunta": "Quais informações sobre saúde sexual você considera importante compartilhar com seus parceiros quando houver uma mudança relevante nas exposições ou nos cuidados de prevenção?"
+        },
+        {
+          "id": "sex-030",
+          "pergunta": "Como você gostaria de agir se recebesse um resultado positivo para uma IST, considerando o cuidado com sua saúde e a comunicação com as pessoas potencialmente expostas?"
+        },
+        {
+          "id": "sex-031",
+          "pergunta": "Quais métodos de prevenção você gostaria de combinar com diferentes parceiros, considerando as práticas sexuais e os riscos envolvidos?"
+        },
+        {
+          "id": "sex-032",
+          "pergunta": "Como você se sentiria se um parceiro quisesse conversar sobre prevenção, exames e histórico de saúde sexual antes de qualquer contato íntimo?"
+        }
+      ]
     }
+  }
 }
