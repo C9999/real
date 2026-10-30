@@ -9,13 +9,40 @@
 
     :root {
       --bg: #f0e8de;
+      --txt: #5a4a3a;
+      --card-shadow: rgba(0,0,0,.07);
+      --drawer-bg: #fff;
+      --drawer-txt: #5a4a3a;
+      --drawer-sub: #a09080;
+      --toggle-row-bg: #fafafa;
+      --history-item-bg: #fafafa;
+      --modal-bg: #fff;
+      --modal-q-color: #4a4040;
+      --modal-id-color: #c0b0a0;
+    }
+
+    /* ── Dark mode ── */
+    body.dark {
+      --bg: #1a1510;
+      --txt: #e8ddd0;
+      --card-shadow: rgba(0,0,0,.35);
+      --drawer-bg: #231e18;
+      --drawer-txt: #e0d4c4;
+      --drawer-sub: #8a7a6a;
+      --toggle-row-bg: #2e2820;
+      --history-item-bg: #2e2820;
+      --modal-bg: #231e18;
+      --modal-q-color: #ddd0c0;
+      --modal-id-color: #6a5a4a;
     }
 
     body {
       font-family: 'Georgia', serif;
       background: var(--bg);
+      color: var(--txt);
       min-height: 100vh;
       overflow-x: hidden;
+      transition: background .3s, color .3s;
     }
 
     /* ── Blobs decorativos ── */
@@ -101,10 +128,10 @@
       position: fixed;
       top: 0; left: -300px;
       width: 280px; height: 100vh;
-      background: #fff;
+      background: var(--drawer-bg);
       z-index: 290;
       box-shadow: 4px 0 20px rgba(0,0,0,.12);
-      transition: left .3s ease;
+      transition: left .3s ease, background .3s;
       display: flex;
       flex-direction: column;
       padding: 68px 20px 28px;
@@ -124,7 +151,7 @@
       font-size: .7rem;
       letter-spacing: .15em;
       text-transform: uppercase;
-      color: #a09080;
+      color: var(--drawer-sub);
       margin-bottom: 10px;
     }
 
@@ -133,17 +160,17 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #fafafa;
+      background: var(--toggle-row-bg);
       border-radius: 10px;
       padding: 12px 14px;
-      margin-bottom: 22px;
+      margin-bottom: 14px;
     }
     .toggle-label {
       display: flex;
       align-items: center;
       gap: 8px;
       font-size: .9rem;
-      color: #5a4a3a;
+      color: var(--drawer-txt);
     }
     .switch { position: relative; width: 42px; height: 22px; }
     .switch input { opacity: 0; width: 0; height: 0; }
@@ -169,16 +196,19 @@
     /* Histórico */
     .history-empty {
       font-size: .85rem;
-      color: #b0a090;
+      color: var(--drawer-sub);
       font-style: italic;
     }
     .history-item {
-      background: #fafafa;
+      background: var(--history-item-bg);
       border-radius: 8px;
       padding: 9px 11px;
       border-left: 3px solid #ddd;
       margin-bottom: 8px;
+      cursor: pointer;
+      transition: opacity .15s;
     }
+    .history-item:hover { opacity: .8; }
     .history-item .h-cat {
       font-size: .65rem;
       letter-spacing: .1em;
@@ -188,7 +218,31 @@
     }
     .history-item .h-q {
       font-size: .8rem;
-      color: #5a4a3a;
+      color: var(--drawer-txt);
+      line-height: 1.4;
+    }
+
+    /* Lista "Falaremos depois" */
+    .depois-item {
+      background: var(--history-item-bg);
+      border-radius: 8px;
+      padding: 9px 11px;
+      border-left: 3px solid #e6b800;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: opacity .15s;
+    }
+    .depois-item:hover { opacity: .8; }
+    .depois-item .h-cat {
+      font-size: .65rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    .depois-item .h-q {
+      font-size: .8rem;
+      color: var(--drawer-txt);
       line-height: 1.4;
     }
 
@@ -213,7 +267,7 @@
       font-size: clamp(2.6rem, 7vw, 3.8rem);
       font-weight: 400;
       letter-spacing: .12em;
-      color: #5a4a3a;
+      color: var(--txt);
       line-height: 1;
     }
     .logo-divider {
@@ -232,11 +286,38 @@
       height: 1px;
       background: #c8b0a0;
     }
+    .tagline-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
     .tagline {
       font-size: .9rem;
       letter-spacing: .22em;
       color: #8a7a6e;
     }
+    /* Botão de info ao lado do R.E.A.L */
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .btn-info {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #c8b090;
+      display: flex;
+      align-items: center;
+      padding: 2px;
+      border-radius: 50%;
+      transition: color .2s;
+      margin-top: 4px; /* alinha visualmente com a base do texto */
+    }
+    .btn-info:hover { color: #5a4a3a; }
+    .btn-info svg { width: 20px; height: 20px; }
 
     /* ── Grid de cartas ── */
     .cards-row {
@@ -319,13 +400,13 @@
     }
 
     .modal {
-      background: #fff;
+      background: var(--modal-bg);
       border-radius: 20px;
       width: min(540px, 100%);
       box-shadow: 0 14px 50px rgba(0,0,0,.18);
       overflow: hidden;
       transform: translateY(20px) scale(.97);
-      transition: transform .28s ease;
+      transition: transform .28s ease, background .3s;
     }
     .modal-overlay.open .modal { transform: none; }
 
@@ -341,7 +422,18 @@
       align-items: center;
       gap: 10px;
     }
-    .modal-header-icons svg { width: 22px; height: 22px; }    .modal-header-title {
+    .modal-header-icons {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .modal-header-icons svg { width: 22px; height: 22px; }
+    .modal-header-icon-sep {
+      font-size: .75rem;
+      color: rgba(0,0,0,.25);
+      line-height: 1;
+    }
+    .modal-header-title {
       font-size: 1rem;
       font-weight: 600;
       letter-spacing: .04em;
@@ -362,6 +454,97 @@
     }
     .modal-close:hover { background: #fff; color: #333; }
 
+    /* Modal amarela / verde (faróis) */
+    .modal.modo-depois { background: #fffbea; }
+    .modal.modo-verde  { background: #f0faf3; }
+    body.dark .modal.modo-depois { background: #2a2510; }
+    body.dark .modal.modo-verde  { background: #0e2018; }
+
+    /* ── Modal de informações ── */
+    .info-overlay {
+      position: fixed; inset: 0;
+      z-index: 500;
+      background: rgba(70,55,40,.4);
+      backdrop-filter: blur(3px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s;
+    }
+    .info-overlay.open { opacity: 1; pointer-events: all; }
+    .info-modal {
+      background: var(--modal-bg);
+      border-radius: 20px;
+      width: min(500px, 100%);
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 14px 50px rgba(0,0,0,.2);
+      transform: translateY(20px) scale(.97);
+      transition: transform .28s ease;
+    }
+    .info-overlay.open .info-modal { transform: none; }
+    .info-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 20px 14px;
+      border-bottom: 1px solid rgba(128,100,60,.12);
+      position: sticky; top: 0;
+      background: var(--modal-bg);
+    }
+    .info-modal-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--txt);
+      letter-spacing: .04em;
+    }
+    .info-modal-body { padding: 22px 24px 28px; }
+    .info-subtitle {
+      font-size: .8rem;
+      letter-spacing: .14em;
+      color: #8a7a6e;
+      margin-bottom: 20px;
+    }
+    .info-secao { margin-bottom: 20px; }
+    .info-secao h4 {
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #b5882a;
+      margin-bottom: 6px;
+    }
+    .info-secao p {
+      font-size: .9rem;
+      line-height: 1.65;
+      color: var(--modal-q-color);
+    }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: #3a3028;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: .85rem;
+      z-index: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s, transform .25s;
+      white-space: nowrap;
+      box-shadow: 0 4px 16px rgba(0,0,0,.25);
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .toast.toast-verde   { background: #2e8a4c; }
+    .toast.toast-amarelo { background: #9a7200; }
+    .toast.toast-vermelho { background: #c03030; }
+
     /* Corpo da modal */
     .modal-body {
       padding: 32px 28px 0;
@@ -371,7 +554,7 @@
     .modal-question {
       font-size: clamp(1rem, 2.4vw, 1.2rem);
       line-height: 1.6;
-      color: #4a4040;
+      color: var(--modal-q-color);
       min-height: 72px;
     }
     .modal-question-id {
@@ -379,29 +562,39 @@
       text-align: left;
       font-size: .68rem;
       letter-spacing: .08em;
-      color: #c0b0a0;
-      padding: 12px 22px 14px;
+      color: var(--modal-id-color);
+      padding: 12px 22px 0;
     }
 
-    /* Duplo ícone no header (Sorte) */
-    .modal-header-icons {
+    /* Faróis */
+    .modal-traffic {
       display: flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 22px 8px;
     }
-    .modal-header-icons svg { width: 22px; height: 22px; }
-    .modal-header-icon-sep {
-      font-size: .75rem;
-      color: rgba(0,0,0,.25);
-      line-height: 1;
+    .btn-farol {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 2.5px solid transparent;
+      cursor: pointer;
+      transition: transform .15s, box-shadow .15s, opacity .2s;
+      opacity: .35;
+      background: currentColor;
     }
+    .btn-farol:hover { opacity: .7; transform: scale(1.1); }
+    .btn-farol.ativo { opacity: 1; box-shadow: 0 0 0 3px rgba(255,255,255,.6), 0 0 0 5px currentColor; transform: scale(1.1); }
+    .btn-farol-verde  { color: #3aaa5c; }
+    .btn-farol-amarelo { color: #e6b800; }
+    .btn-farol-vermelho { color: #d94040; }
 
     /* Rodapé da modal */
     .modal-footer {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      padding: 10px 22px 18px;
+      padding: 8px 22px 18px;
     }
 
     .btn-next {
@@ -419,9 +612,19 @@
       gap: 6px;
       transition: filter .2s, transform .15s;
     }
-    .btn-next:hover { filter: brightness(1.1); }
+    .btn-next:hover  { filter: brightness(1.1); }
     .btn-next:active { transform: scale(.96); }
     .btn-next.hidden { display: none; }
+
+    .modal {
+      background: var(--modal-bg);
+      border-radius: 20px;
+      width: min(540px, 100%);
+      box-shadow: 0 14px 50px rgba(0,0,0,.18);
+      overflow: hidden;
+      transform: translateY(20px) scale(.97);
+      transition: transform .28s ease, background .3s;
+    }
 
     /* ── Frase flutuante ── */
     .floating-phrase {
@@ -523,16 +726,26 @@
 
   <h3>Configurações</h3>
   <div class="toggle-row">
-    <span class="toggle-label">
-      🔥 Categoria Sexo
-    </span>
+    <span class="toggle-label">🔥 Categoria Sexo</span>
     <label class="switch" aria-label="Ativar/desativar categoria Sexo">
       <input type="checkbox" id="toggleSexo" checked />
       <span class="slider"></span>
     </label>
   </div>
+  <div class="toggle-row">
+    <span class="toggle-label">🌙 Dark mode</span>
+    <label class="switch" aria-label="Ativar/desativar Dark mode">
+      <input type="checkbox" id="toggleDark" />
+      <span class="slider"></span>
+    </label>
+  </div>
 
-  <h3>Histórico da sessão</h3>
+  <h3>Falaremos depois</h3>
+  <div id="depoisList">
+    <p class="history-empty">Nenhuma carta aqui ainda.</p>
+  </div>
+
+  <h3 style="margin-top:18px">Histórico da sessão</h3>
   <div id="historyList">
     <p class="history-empty" id="historyEmpty">Nenhuma pergunta vista ainda.</p>
   </div>
@@ -541,14 +754,25 @@
 <!-- App -->
 <div id="app">
   <header>
-    <div class="logo">R.E.A.L</div>
+    <div class="logo-wrap">
+      <button class="btn-info" id="btnInfo" aria-label="Sobre o jogo">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="10" cy="10" r="8.5"/>
+          <path d="M10 9 L10 14"/>
+          <circle cx="10" cy="6.5" r=".8" fill="currentColor" stroke="none"/>
+        </svg>
+      </button>
+      <div class="logo">R.E.A.L</div>
+    </div>
     <div class="logo-divider">
       <svg viewBox="0 0 14 12" width="14" fill="none">
         <path d="M7 11S1.5 7.5 1.5 4A3 3 0 017 1.9 3 3 0 0112.5 4C12.5 7.5 7 11 7 11z"
               stroke="#c8b090" stroke-width="1.1" fill="none"/>
       </svg>
     </div>
-    <p class="tagline">Converse · Conheça · Conecte</p>
+    <p class="tagline-wrap">
+      <span class="tagline">Converse · Conheça · Conecte</span>
+    </p>
   </header>
 
   <!-- Linha das 5 categorias principais -->
@@ -572,6 +796,12 @@
       <p class="modal-question" id="modalQuestion"></p>
     </div>
     <span class="modal-question-id" id="modalQuestionId"></span>
+    <!-- Faróis -->
+    <div class="modal-traffic">
+      <button class="btn-farol btn-farol-verde"    id="farolVerde"    title="Aprofunde agora"       aria-label="Verde: aprofunde agora"></button>
+      <button class="btn-farol btn-farol-amarelo"  id="farolAmarelo"  title="Falaremos depois"      aria-label="Amarelo: falaremos depois"></button>
+      <button class="btn-farol btn-farol-vermelho" id="farolVermelho" title="Não falaremos sobre isso" aria-label="Vermelho: pular"></button>
+    </div>
     <div class="modal-footer">
       <button class="btn-next" id="btnNext">
         Próxima
@@ -582,6 +812,23 @@
     </div>
   </div>
 </div>
+
+<!-- Modal de informações -->
+<div class="info-overlay" id="infoOverlay" role="dialog" aria-modal="true" aria-label="Sobre o jogo">
+  <div class="info-modal" id="infoModal">
+    <div class="info-modal-header">
+      <span class="info-modal-title" id="infoTitulo">Sobre o jogo</span>
+      <button class="modal-close" id="infoClose" aria-label="Fechar">✕</button>
+    </div>
+    <div class="info-modal-body" id="infoBody">
+      <p class="info-subtitle" id="infoSubtitulo"></p>
+      <div id="infoSecoes"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
 
 <script>
 /* ═══════════════════════════════════════
@@ -659,12 +906,17 @@ const META = {
 /* ═══════════════════════════════════════
    ESTADO
 ═══════════════════════════════════════ */
-let perguntas = {};
-let sexoAtivo = true;
+let perguntas  = {};
+let sexoAtivo  = true;
+let darkMode   = false;
 let catAtual   = null;   // categoria atual aberta na modal
 let pergAtual  = null;   // objeto {id, pergunta} atual
 let viaSort    = false;  // true quando a modal foi aberta pelo Sorte
+let farolAtivo = null;   // 'verde' | 'amarelo' | 'vermelho' | null
 let historico  = [];
+let depoisList = [];     // lista de perguntas "falaremos depois"
+let infoData   = null;   // dados do texto.json
+let toastTimer = null;
 
 /* ═══════════════════════════════════════
    HELPERS
@@ -701,6 +953,16 @@ async function carregarPerguntas() {
     for (const [key, arr] of Object.entries(PERGUNTAS_FALLBACK)) {
       perguntas[key] = arr;
     }
+  }
+}
+
+async function carregarTexto() {
+  try {
+    const res = await fetch('texto.json');
+    if (!res.ok) throw new Error('Falha no fetch');
+    infoData = await res.json();
+  } catch (e) {
+    infoData = null;
   }
 }
 
@@ -791,7 +1053,6 @@ function mostrarModal(chave, pergObj, isSorte) {
   // Ícones no header
   const iconsEl = document.getElementById('modalHeaderIcons');
   if (isSorte) {
-    // ícone da categoria sorteada + separador + ícone sorte
     iconsEl.innerHTML = `
       <span style="color:${m.cor}">${m.icon}</span>
       <span class="modal-header-icon-sep">+</span>
@@ -801,7 +1062,7 @@ function mostrarModal(chave, pergObj, isSorte) {
   }
 
   // Pergunta e ID
-  document.getElementById('modalQuestion').textContent  = pergObj.pergunta;
+  document.getElementById('modalQuestion').textContent   = pergObj.pergunta;
   document.getElementById('modalQuestionId').textContent = pergObj.id;
 
   // Botão Próxima: escondido em Sorte, visível nas categorias
@@ -812,6 +1073,13 @@ function mostrarModal(chave, pergObj, isSorte) {
     btnNext.classList.remove('hidden');
     btnNext.style.background = m.cor;
   }
+
+  // Reseta faróis
+  farolAtivo = null;
+  document.getElementById('farolVerde').classList.remove('ativo');
+  document.getElementById('farolAmarelo').classList.remove('ativo');
+  document.getElementById('farolVermelho').classList.remove('ativo');
+  document.querySelector('.modal').classList.remove('modo-depois', 'modo-verde');
 
   adicionarHistorico(chave, pergObj, isSorte);
 
@@ -837,7 +1105,143 @@ function proximaPergunta() {
   pergAtual  = nova;
   document.getElementById('modalQuestion').textContent  = nova.pergunta;
   document.getElementById('modalQuestionId').textContent = nova.id;
+  // Reseta faróis
+  farolAtivo = null;
+  document.getElementById('farolVerde').classList.remove('ativo');
+  document.getElementById('farolAmarelo').classList.remove('ativo');
+  document.getElementById('farolVermelho').classList.remove('ativo');
+  document.querySelector('.modal').classList.remove('modo-depois', 'modo-verde');
   adicionarHistorico(catAtual, nova, false);
+}
+
+/* ═══════════════════════════════════════
+   TOAST
+═══════════════════════════════════════ */
+function mostrarToast(msg, tipo) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast toast-' + tipo + ' show';
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { t.classList.remove('show'); }, 2800);
+}
+
+/* ═══════════════════════════════════════
+   FARÓIS
+═══════════════════════════════════════ */
+function acionarFarol(cor) {
+  // Deseleciona se clicar no mesmo
+  if (farolAtivo === cor) {
+    farolAtivo = null;
+    document.getElementById('farol' + cor.charAt(0).toUpperCase() + cor.slice(1)).classList.remove('ativo');
+    document.querySelector('.modal').classList.remove('modo-depois', 'modo-verde');
+    return;
+  }
+
+  // Remove estado anterior
+  ['Verde','Amarelo','Vermelho'].forEach(c =>
+    document.getElementById('farol' + c).classList.remove('ativo')
+  );
+  document.querySelector('.modal').classList.remove('modo-depois', 'modo-verde');
+
+  farolAtivo = cor;
+  document.getElementById('farol' + cor.charAt(0).toUpperCase() + cor.slice(1)).classList.add('ativo');
+
+  if (cor === 'verde') {
+    document.querySelector('.modal').classList.add('modo-verde');
+    mostrarToast('Aprofunde mais sobre essa carta 🌱', 'verde');
+
+  } else if (cor === 'amarelo') {
+    document.querySelector('.modal').classList.add('modo-depois');
+    // Adiciona à lista "depois" se ainda não estiver lá
+    if (catAtual && pergAtual) {
+      const jaExiste = depoisList.some(d => d.id === pergAtual.id && d.chave === catAtual);
+      if (!jaExiste) {
+        depoisList.push({ chave: catAtual, id: pergAtual.id, texto: pergAtual.pergunta, isSorte: viaSort });
+        renderDepois();
+      }
+    }
+    mostrarToast('Falaremos dessa carta mais tarde 🟡', 'amarelo');
+    setTimeout(() => fecharModal(), 1200);
+
+  } else if (cor === 'vermelho') {
+    // Remove do histórico se foi adicionado
+    if (pergAtual) {
+      historico = historico.filter(h => !(h.id === pergAtual.id && h.chave === catAtual));
+      renderHistorico();
+    }
+    mostrarToast('Não falaremos mais sobre essa carta 🔴', 'vermelho');
+    setTimeout(() => fecharModal(), 900);
+  }
+}
+
+/* ═══════════════════════════════════════
+   LISTA "FALAREMOS DEPOIS"
+═══════════════════════════════════════ */
+function renderDepois() {
+  const el = document.getElementById('depoisList');
+  if (!depoisList.length) {
+    el.innerHTML = '<p class="history-empty">Nenhuma carta aqui ainda.</p>';
+    return;
+  }
+  el.innerHTML = depoisList.map((item, idx) => {
+    const m = META[item.chave];
+    return `<div class="depois-item" data-idx="${idx}">
+              <div class="h-cat" style="color:#b38a00">${m.nome}</div>
+              <div class="h-q">${item.texto}</div>
+            </div>`;
+  }).join('');
+  // Clique reabre a pergunta com cor amarela
+  el.querySelectorAll('.depois-item').forEach(el => {
+    el.addEventListener('click', () => {
+      const idx  = parseInt(el.dataset.idx);
+      const item = depoisList[idx];
+      catAtual  = item.chave;
+      pergAtual = { id: item.id, pergunta: item.texto };
+      viaSort   = item.isSorte;
+      mostrarModal(item.chave, pergAtual, item.isSorte);
+      // Aplica farol amarelo automaticamente ao abrir da lista "depois"
+      setTimeout(() => {
+        document.querySelector('.modal').classList.add('modo-depois');
+        document.getElementById('farolAmarelo').classList.add('ativo');
+        farolAtivo = 'amarelo';
+      }, 50);
+      fecharMenu();
+    });
+  });
+}
+
+/* ═══════════════════════════════════════
+   DARK MODE
+═══════════════════════════════════════ */
+function aplicarDark(ativo) {
+  darkMode = ativo;
+  document.body.classList.toggle('dark', ativo);
+}
+
+/* ═══════════════════════════════════════
+   MODAL DE INFORMAÇÕES
+═══════════════════════════════════════ */
+function abrirInfo() {
+  const overlay = document.getElementById('infoOverlay');
+  if (infoData) {
+    document.getElementById('infoTitulo').textContent   = infoData.titulo || 'Sobre o jogo';
+    document.getElementById('infoSubtitulo').textContent = infoData.subtitulo || '';
+    const secoesEl = document.getElementById('infoSecoes');
+    if (infoData.descricao) {
+      secoesEl.innerHTML = `<div class="info-secao"><p>${infoData.descricao}</p></div>`;
+    } else {
+      secoesEl.innerHTML = '';
+    }
+    if (infoData.secoes) {
+      secoesEl.innerHTML += infoData.secoes.map(s =>
+        `<div class="info-secao"><h4>${s.titulo}</h4><p>${s.texto}</p></div>`
+      ).join('');
+    }
+  }
+  overlay.classList.add('open');
+}
+function fecharInfo() {
+  document.getElementById('infoOverlay').classList.remove('open');
 }
 
 /* ═══════════════════════════════════════
@@ -877,6 +1281,11 @@ document.getElementById('toggleSexo').addEventListener('change', function() {
   renderCartas();
 });
 
+// Toggle Dark
+document.getElementById('toggleDark').addEventListener('change', function() {
+  aplicarDark(this.checked);
+});
+
 // Menu
 const menuBtn       = document.getElementById('menuBtn');
 const drawer        = document.getElementById('drawer');
@@ -899,23 +1308,37 @@ menuBtn.addEventListener('click', () =>
 );
 drawerOverlay.addEventListener('click', fecharMenu);
 
-// Modal
+// Modal de perguntas
 document.getElementById('modalClose').addEventListener('click', fecharModal);
 document.getElementById('btnNext').addEventListener('click', proximaPergunta);
 document.getElementById('modalOverlay').addEventListener('click', e => {
   if (e.target === document.getElementById('modalOverlay')) fecharModal();
 });
+
+// Faróis
+document.getElementById('farolVerde').addEventListener('click',    () => acionarFarol('verde'));
+document.getElementById('farolAmarelo').addEventListener('click',  () => acionarFarol('amarelo'));
+document.getElementById('farolVermelho').addEventListener('click', () => acionarFarol('vermelho'));
+
+// Botão info
+document.getElementById('btnInfo').addEventListener('click', abrirInfo);
+document.getElementById('infoClose').addEventListener('click', fecharInfo);
+document.getElementById('infoOverlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('infoOverlay')) fecharInfo();
+});
+
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { fecharModal(); fecharMenu(); }
+  if (e.key === 'Escape') { fecharModal(); fecharMenu(); fecharInfo(); }
 });
 
 /* ═══════════════════════════════════════
    INICIALIZAÇÃO
 ═══════════════════════════════════════ */
 (async () => {
-  await carregarPerguntas();
+  await Promise.all([carregarPerguntas(), carregarTexto()]);
   renderCartas();
   renderHistorico();
+  renderDepois();
 })();
 </script>
 </body>

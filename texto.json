@@ -1,0 +1,23 @@
+{
+  "titulo": "O que é o R.E.A.L?",
+  "subtitulo": "Converse · Conheça · Conecte",
+  "descricao": "R.E.A.L é um jogo de cartas para estimular conversas reais sobre relacionamentos, expectativas, acordos, limites e intimidade.",
+  "secoes": [
+    {
+      "titulo": "Como jogar",
+      "texto": "Escolha uma categoria e leia a pergunta em voz alta. Não há respostas certas ou erradas — o objetivo é abrir espaço para uma conversa genuína."
+    },
+    {
+      "titulo": "As categorias",
+      "texto": "Relacionamentos, Expectativas, Acordos, Limites e Sexo. A categoria Sorte sorteia uma pergunta aleatória de qualquer categoria ativa."
+    },
+    {
+      "titulo": "Os faróis",
+      "texto": "Ao ver uma pergunta, use os faróis para indicar o que fazer com ela: Verde para aprofundar agora, Amarelo para deixar para depois, Vermelho para pular."
+    },
+    {
+      "titulo": "Sobre o jogo",
+      "texto": "Preencha este arquivo texto.json com as informações reais sobre o jogo."
+    }
+  ]
+}
