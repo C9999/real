@@ -193,7 +193,33 @@
     .switch input:checked + .slider { background: #2d9b8e; }
     .switch input:checked + .slider::before { transform: translateX(20px); }
 
-    /* Histórico */
+    /* ── Contador de perguntas ── */
+    .drawer-counter {
+      background: var(--toggle-row-bg);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .drawer-counter-label {
+      font-size: .78rem;
+      color: var(--drawer-sub);
+      letter-spacing: .04em;
+    }
+    .drawer-counter-num {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--drawer-txt);
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+    .drawer-counter-sub {
+      font-size: .65rem;
+      color: var(--drawer-sub);
+      margin-top: 2px;
+    }
     .history-empty {
       font-size: .85rem;
       color: var(--drawer-sub);
@@ -335,11 +361,38 @@
     }
 
     /* ── Carta individual ── */
+
+    /* Container da carta — suporta flip 3D */
+    .card-slot-relacionamentos,
+    .card-slot-expectativas,
+    .card-slot-acordos,
+    .card-slot-limites,
+    .card-slot-sexo,
+    .card-slot-sorte {
+      perspective: 800px;
+    }
+
+    .card-flip {
+      position: relative;
+      width: clamp(138px, 16vw, 172px);
+      aspect-ratio: 3 / 4;
+      transform-style: preserve-3d;
+      transition: transform .45s cubic-bezier(.4,0,.2,1);
+    }
+    .card-flip.flipping { transform: rotateY(90deg); }
+
+    /* Frente e verso compartilham posição */
+    .card-face {
+      position: absolute; inset: 0;
+      backface-visibility: hidden;
+      border-radius: 16px;
+    }
+
     .card {
       background: var(--card-bg, #eee);
       border-radius: 16px;
-      width: clamp(138px, 16vw, 172px);
-      aspect-ratio: 3 / 4;
+      width: 100%;
+      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -348,7 +401,7 @@
       cursor: pointer;
       position: relative;
       user-select: none;
-      box-shadow: 0 2px 12px rgba(0,0,0,.07);
+      box-shadow: 0 2px 12px var(--card-shadow);
       transition: transform .18s, box-shadow .18s, filter .2s, opacity .2s;
     }
     .card:hover:not(.disabled) {
@@ -379,6 +432,20 @@
       margin-bottom: 8px;
       text-align: center;
     }
+
+    /* Verso da carta (exibido durante o flip) */
+    .card-back {
+      background: var(--card-bg, #eee);
+      border-radius: 16px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 12px var(--card-shadow);
+      transform: rotateY(180deg);
+    }
+    .card-back svg { width: 40px; height: 40px; opacity: .3; }
 
     /* ── Modal ── */
     .modal-overlay {
@@ -668,12 +735,12 @@
       .card-slot-acordos         { grid-area: aco; }
       .card-slot-limites         { grid-area: lim; }
 
-      .card { width: 100%; }
-      .card-slot-sexo .card { width: clamp(110px, 40vw, 148px); }
+      .card-flip { width: 100%; }
+      .card-slot-sexo .card-flip { width: clamp(110px, 40vw, 148px); }
 
       /* Sorte fica no sorte-row separado — garante centralização e tamanho correto */
       .sorte-row .card-slot-sorte { display: flex; justify-content: center; }
-      .sorte-row .card-slot-sorte .card { width: clamp(110px, 40vw, 148px); }
+      .sorte-row .card-slot-sorte .card-flip { width: clamp(110px, 40vw, 148px); }
 
       .modal-footer { flex-direction: column; gap: 12px; align-items: stretch; }
       .btn-next { justify-content: center; }
@@ -723,6 +790,15 @@
 <!-- Drawer -->
 <div class="drawer-overlay" id="drawerOverlay"></div>
 <nav class="drawer" id="drawer" aria-label="Menu">
+
+  <!-- Contador -->
+  <div class="drawer-counter">
+    <div>
+      <div class="drawer-counter-label">Perguntas vistas</div>
+      <div class="drawer-counter-sub">nesta sessão</div>
+    </div>
+    <div class="drawer-counter-num" id="drawerCounter">0</div>
+  </div>
 
   <h3>Configurações</h3>
   <div class="toggle-row">
@@ -971,6 +1047,8 @@ async function carregarTexto() {
 ═══════════════════════════════════════ */
 function criarCarta(chave, disabled) {
   const m = META[chave];
+
+  // Carta (frente)
   const card = document.createElement('div');
   card.className = 'card' + (disabled ? ' disabled' : '');
   card.style.setProperty('--card-bg', m.cardBg);
@@ -980,15 +1058,39 @@ function criarCarta(chave, disabled) {
   card.innerHTML = `
     <div class="card-icon" style="color:${m.cor}">${m.icon}</div>
     <span class="card-name" style="color:${m.cor}">${m.nome}</span>`;
+
+  // Verso da carta
+  const back = document.createElement('div');
+  back.className = 'card-back card-face';
+  back.style.setProperty('--card-bg', m.cardBg);
+  back.innerHTML = `<svg viewBox="0 0 34 30" fill="none" stroke="${m.cor}" stroke-width="1.4">
+    <path d="M17 26S4 17.5 4 9.5A6.5 6.5 0 0117 5.6 6.5 6.5 0 0130 9.5C30 17.5 17 26 17 26z"/>
+  </svg>`;
+
+  // Container flip
+  const flip = document.createElement('div');
+  flip.className = 'card-flip';
+  flip.appendChild(card);
+  flip.appendChild(back);
+
   if (!disabled) {
     const acao = chave === 'sorte' ? () => abrirSorte() : () => abrirCategoria(chave);
-    card.addEventListener('click', acao);
-    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') acao(); });
+    const dispararComFlip = () => {
+      if (flip.classList.contains('flipping')) return;
+      flip.classList.add('flipping');
+      setTimeout(() => {
+        flip.classList.remove('flipping');
+        acao();
+      }, 230); // abre a modal no pico da virada (carta de lado)
+    };
+    flip.addEventListener('click', dispararComFlip);
+    flip.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') dispararComFlip(); });
   }
+
   // wrapper para grid-area no mobile
   const slot = document.createElement('div');
   slot.className = `card-slot-${chave}`;
-  slot.appendChild(card);
+  slot.appendChild(flip);
   return slot;
 }
 
@@ -1168,6 +1270,7 @@ function acionarFarol(cor) {
     if (pergAtual) {
       historico = historico.filter(h => !(h.id === pergAtual.id && h.chave === catAtual));
       renderHistorico();
+      atualizarContador();
     }
     mostrarToast('Não falaremos mais sobre essa carta 🔴', 'vermelho');
     setTimeout(() => fecharModal(), 900);
@@ -1254,6 +1357,7 @@ function adicionarHistorico(chave, pergObj, isSorte) {
   }
   historico.push({ chave, id: pergObj.id, texto: pergObj.pergunta, isSorte });
   renderHistorico();
+  atualizarContador();
 }
 
 function renderHistorico() {
@@ -1270,6 +1374,10 @@ function renderHistorico() {
               <div class="h-q">${item.texto}</div>
             </div>`;
   }).join('');
+}
+
+function atualizarContador() {
+  document.getElementById('drawerCounter').textContent = historico.length;
 }
 
 /* ═══════════════════════════════════════
